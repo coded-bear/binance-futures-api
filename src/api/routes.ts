@@ -1,0 +1,26 @@
+const API_URL = 'https://fapi.binance.com/fapi/v1';
+
+export const GET_PING = `${API_URL}/ping`;
+export const GET_SERVER_TIME = `${API_URL}/time`;
+export const GET_EXCHANGE_INFO = `${API_URL}/exchangeInfo`;
+export const GET_ORDER_BOOK = `${API_URL}/depth`;
+export const GET_RECENT_TRADES_LIST = `${API_URL}/trades`;
+export const GET_HISTORICAL_TRADES_LIST = `${API_URL}/historicalTrades`;
+export const GET_COMPRESSED_TRADES_LIST = `${API_URL}/aggTrades`;
+export const GET_KLINES_DATA = `${API_URL}/klines`;
+export const GET_CONTINUOUS_KLINES_DATA = `${API_URL}/continuousKlines`;
+export const GET_INDEX_PRICE_KLINES_DATA = `${API_URL}/indexPriceKlines`;
+export const GET_MARK_PRICE_KLINES_DATA = `${API_URL}/markPriceKlines`;
+export const GET_MARK_PRICE = `${API_URL}/premiumIndex`;
+export const GET_FUNDING_RATE_HISTORY = `${API_URL}/fundingRate`;
+export const GET_24H_TICKER_PRICE = `${API_URL}/ticker/24hr`;
+export const GET_SYMBOL_PRICE_TICKER = `${API_URL}/ticker/price`;
+export const GET_SYMBOL_ORDER_BOOK_TICKER = `${API_URL}/ticker/bookTicker`;
+export const GET_OPEN_INTEREST = `${API_URL}/openInterest`;
+export const GET_OPEN_INTEREST_STATISTICS = `${API_URL}/openInterestHist`;
+export const GET_TOP_TRADER_LONG_SHORT_RATIO = `${API_URL}/futures/data/topLongShortAccountRatio`;
+export const GET_LONG_SHORT_RATIO = `${API_URL}/futures/data/globalLongShortAccountRatio`;
+export const GET_TAKER_BUY_SELL_VOLUME = `${API_URL}/futures/data/takerlongshortRatio`;
+export const GET_HISTORICAL_BLVT_NAV_KLINE = `${API_URL}/lvtKlines`;
+export const GET_COMPOSITE_INDEX_SYMBOL_INFO = `${API_URL}/indexInfo`;
+export const GET_MULTI_ASSETS_MODE_ASSET_INDEX = `${API_URL}/assetIndex`;
