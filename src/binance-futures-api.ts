@@ -125,52 +125,52 @@ export class BinanceFAPI {
   // *****************************
 
   public async accountInfo() {
-    const params = this._createSignatureParams();
+    const params: Object = this._createSignatureParams();
     return await request({ url: routes.ACCOUNT, params }, this.apikey);
   }
 
   public async getIncomeHistory(data?: intf.IncomeHistoryParams) {
-    const params = this._createSignatureParams(data);
+    const params: Object = this._createSignatureParams(data);
     return await request({ url: routes.INCOME, params }, this.apikey);
   }
 
   public async positionInfo(data?: intf.OptionalSymbolParams) {
-    const params = this._createSignatureParams(data);
+    const params: Object = this._createSignatureParams(data);
     return await request({ url: routes.POSITION_RISK, params }, this.apikey);
   }
 
   public async accountTradeList(data: intf.SymbolLimitTimeFromIdParams) {
-    const params = this._createSignatureParams(data);
+    const params: Object = this._createSignatureParams(data);
     return await request({ url: routes.USER_TRADES, params }, this.apikey);
   }
 
   public async accountBalance() {
-    const params = this._createSignatureParams();
+    const params: Object = this._createSignatureParams();
     return await request({ url: routes.BALANCE, params }, this.apikey);
   }
 
   public async leverageBrackets(data?: intf.OptionalSymbolParams) {
-    const params = this._createSignatureParams(data);
+    const params: Object = this._createSignatureParams(data);
     return await request({ url: routes.LEVERAGE_BRACKETS, params }, this.apikey);
   }
 
   public async positionADLQuantile(data?: intf.OptionalSymbolParams) {
-    const params = this._createSignatureParams(data);
+    const params: Object = this._createSignatureParams(data);
     return await request({ url: routes.ADL_QUANTILE, params }, this.apikey);
   }
 
   public async userCommissionRate(data: intf.SymbolParams) {
-    const params = this._createSignatureParams(data);
+    const params: Object = this._createSignatureParams(data);
     return await request({ url: routes.COMMISSION_RATE, params }, this.apikey);
   }
 
   public async getCurrentMultiAssetsMode() {
-    const params = this._createSignatureParams();
+    const params: Object = this._createSignatureParams();
     return await request({ url: routes.MULTIASSETS_MARGIN, params }, this.apikey);
   }
 
   public async changeMultiAssetsMode(data: intf.MultiAssetsMarginParams) {
-    const params = this._createSignatureParams(data);
+    const params: Object = this._createSignatureParams(data);
     return await request({ method: 'post', url: routes.MULTIASSETS_MARGIN, params }, this.apikey);
   }
 
@@ -178,7 +178,97 @@ export class BinanceFAPI {
   // ********* O R D E R *********
   // *****************************
 
+  public async newOrder(data: Object) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ method: 'post', url: routes.ORDER, params }, this.apikey);
+  }
+
+  public async placeMultipleOrders(data: Object) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ method: 'post', url: routes.BATCH_ORDERS, params }, this.apikey);
+  }
+
+  public async queryOrder(data: Object) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ url: routes.ORDER, params }, this.apikey);
+  }
+
+  public async cancelOrder(data: Object) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ method: 'delete', url: routes.ORDER, params }, this.apikey);
+  }
+
+  public async cancelAllOpenOrders(data: intf.SymbolParams) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ method: 'delete', url: routes.ALL_OPEN_ORDERS, params }, this.apikey);
+  }
+
+  public async autoCancelAllOpenOrders(data: Object) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ method: 'post', url: routes.COUNTDOWN_CANCEL_ALL, params }, this.apikey);
+  }
+
+  public async cancelMultipleOrders(data: Object) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ method: 'delete', url: routes.BATCH_ORDERS, params }, this.apikey);
+  }
+
+  public async getCurrentAllOpenOrders(data?: intf.OptionalSymbolParams) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ url: routes.OPEN_ORDERS, params }, this.apikey);
+  }
+
+  public async queryCurrentAllOpenOrders(data: Object) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ url: routes.OPEN_ORDER, params }, this.apikey);
+  }
+
+  public async allOrders(data: Object) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ url: routes.ALL_ORDERS, params }, this.apikey);
+  }
+
+  public async getForceOrders(data?: Object) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ url: routes.FORCE_ORDERS, params }, this.apikey);
+  }
+
   // *****************************
   // ********* T R A D E *********
   // *****************************
+
+  public async changeMarginType(data: Object) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ method: 'post', url: routes.MARGIN_TYPE, params }, this.apikey);
+  }
+
+  public async changeInitialLeverage(data: Object) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ method: 'post', url: routes.LEVERAGE, params }, this.apikey);
+  }
+
+  public async modifyIsolatedPositionMargin(data: Object) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ method: 'post', url: routes.POSITION_MARGIN, params }, this.apikey);
+  }
+
+  public async getdPositionMarginChangeHistory(data: Object) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ url: routes.POSITION_MARGIN_HIST, params }, this.apikey);
+  }
+
+  public async changePositionMode(data: Object) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ method: 'post', url: routes.POSITION_SIDE, params }, this.apikey);
+  }
+
+  public async getCurrentPositionMode() {
+    const params: Object = this._createSignatureParams();
+    return await request({ method: 'post', url: routes.POSITION_SIDE, params }, this.apikey);
+  }
+
+  public async getTradingStatus(data?: intf.OptionalSymbolParams) {
+    const params: Object = this._createSignatureParams(data);
+    return await request({ method: 'post', url: routes.TRADING_STATUS, params }, this.apikey);
+  }
 }

@@ -61,5 +61,6 @@ export const FORCE_ORDERS = `${FAPI_URL}/fapi/v1/forceOrders`;
 export const MARGIN_TYPE = `${FAPI_URL}/fapi/v1/marginType`;
 export const LEVERAGE = `${FAPI_URL}/fapi/v1/leverage`;
 export const POSITION_MARGIN = `${FAPI_URL}/fapi/v1/positionMargin`;
-export const POSITION_SIDE = `${FAPI_URL}/fapi/v1/positionSide`;
+export const POSITION_MARGIN_HIST = `${FAPI_URL}/fapi/v1/positionMargin/history`;
+export const POSITION_SIDE = `${FAPI_URL}/fapi/v1/positionSide/dual`;
 export const TRADING_STATUS = `${FAPI_URL}/fapi/v1/apiTradingStatus`;
