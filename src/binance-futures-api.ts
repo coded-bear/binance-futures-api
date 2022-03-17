@@ -138,55 +138,52 @@ export class BinanceFAPI {
 
   public async accountInfo() {
     const params = this._createSignatureParams();
-    return await request({ url: routes.GET_ACCOUNT_INFO, params }, this.apikey);
+    return await request({ url: routes.ACCOUNT, params }, this.apikey);
   }
 
   public async getIncomeHistory(data?: intf.IncomeHistoryParams) {
     const params = this._createSignatureParams(data);
-    return await request({ url: routes.GET_INCOME_HIST, params }, this.apikey);
+    return await request({ url: routes.INCOME, params }, this.apikey);
   }
 
   public async positionInfo(data?: intf.OptionalSymbolParams) {
     const params = this._createSignatureParams(data);
-    return await request({ url: routes.GET_POSITION_INFO, params }, this.apikey);
+    return await request({ url: routes.POSITION_RISK, params }, this.apikey);
   }
 
   public async accountTradeList(data: intf.SymbolLimitTimeFromIdParams) {
     const params = this._createSignatureParams(data);
-    return await request({ url: routes.GET_ACCOUNT_TRADE_LIST, params }, this.apikey);
+    return await request({ url: routes.USER_TRADES, params }, this.apikey);
   }
 
   public async accountBalance() {
     const params = this._createSignatureParams();
-    return await request({ url: routes.GET_ACCOUNT_BALANCE, params }, this.apikey);
+    return await request({ url: routes.BALANCE, params }, this.apikey);
   }
 
   public async leverageBrackets(data?: intf.OptionalSymbolParams) {
     const params = this._createSignatureParams(data);
-    return await request({ url: routes.GET_LEVERAGE_BRACKETS, params }, this.apikey);
+    return await request({ url: routes.LEVERAGE_BRACKETS, params }, this.apikey);
   }
 
   public async positionADLQuantile(data?: intf.OptionalSymbolParams) {
     const params = this._createSignatureParams(data);
-    return await request({ url: routes.GET_POSITION_ADL_QUANTILE, params }, this.apikey);
+    return await request({ url: routes.ADL_QUANTILE, params }, this.apikey);
   }
 
   public async userCommissionRate(data: intf.SymbolParams) {
     const params = this._createSignatureParams(data);
-    return await request({ url: routes.GET_USER_COMMISSION_RATE, params }, this.apikey);
+    return await request({ url: routes.COMMISSION_RATE, params }, this.apikey);
   }
 
   public async getCurrentMultiAssetsMode() {
     const params = this._createSignatureParams();
-    return await request({ url: routes.GET_MULTIASSETS_MODE, params }, this.apikey);
+    return await request({ url: routes.MULTIASSETS_MARGIN, params }, this.apikey);
   }
 
   public async changeMultiAssetsMode(data: intf.MultiAssetsMarginParams) {
     const params = this._createSignatureParams(data);
-    return await request(
-      { method: 'post', url: routes.POST_MULTIASSETS_MODE, params },
-      this.apikey,
-    );
+    return await request({ method: 'post', url: routes.MULTIASSETS_MARGIN, params }, this.apikey);
   }
 
   // *****************************

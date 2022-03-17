@@ -31,16 +31,15 @@ export const GET_ASSET_INDEX = `${FAPI_URL}/fapi/v1/assetIndex`;
 // ******* A C C O U N T *******
 // *****************************
 
-export const GET_ACCOUNT_INFO = `${FAPI_URL}/fapi/v2/account`;
-export const GET_INCOME_HIST = `${FAPI_URL}/fapi/v1/income`;
-export const GET_POSITION_INFO = `${FAPI_URL}/fapi/v1/positionRisk`;
-export const GET_ACCOUNT_TRADE_LIST = `${FAPI_URL}/fapi/v1/userTrades`;
-export const GET_ACCOUNT_BALANCE = `${FAPI_URL}/fapi/v2/balance`;
-export const GET_LEVERAGE_BRACKETS = `${FAPI_URL}/fapi/v1/leverageBracket`;
-export const GET_POSITION_ADL_QUANTILE = `${FAPI_URL}/fapi/v1/adlQuantile`;
-export const GET_USER_COMMISSION_RATE = `${FAPI_URL}/fapi/v1/commissionRate`;
-export const GET_MULTIASSETS_MODE = `${FAPI_URL}/fapi/v1/multiAssetsMargin`;
-export const POST_MULTIASSETS_MODE = `${FAPI_URL}/fapi/v1/multiAssetsMargin`;
+export const ACCOUNT = `${FAPI_URL}/fapi/v2/account`;
+export const INCOME = `${FAPI_URL}/fapi/v1/income`;
+export const POSITION_RISK = `${FAPI_URL}/fapi/v1/positionRisk`;
+export const USER_TRADES = `${FAPI_URL}/fapi/v1/userTrades`;
+export const BALANCE = `${FAPI_URL}/fapi/v2/balance`;
+export const LEVERAGE_BRACKETS = `${FAPI_URL}/fapi/v1/leverageBracket`;
+export const ADL_QUANTILE = `${FAPI_URL}/fapi/v1/adlQuantile`;
+export const COMMISSION_RATE = `${FAPI_URL}/fapi/v1/commissionRate`;
+export const MULTIASSETS_MARGIN = `${FAPI_URL}/fapi/v1/multiAssetsMargin`;
 
 // *****************************
 // ********* O R D E R *********
