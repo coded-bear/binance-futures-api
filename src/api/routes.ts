@@ -41,3 +41,26 @@ export const GET_POSITION_ADL_QUANTILE = `${FAPI_URL}/fapi/v1/adlQuantile`;
 export const GET_USER_COMMISSION_RATE = `${FAPI_URL}/fapi/v1/commissionRate`;
 export const GET_MULTIASSETS_MODE = `${FAPI_URL}/fapi/v1/multiAssetsMargin`;
 export const POST_MULTIASSETS_MODE = `${FAPI_URL}/fapi/v1/multiAssetsMargin`;
+
+// *****************************
+// ********* O R D E R *********
+// *****************************
+
+export const ORDER = `${FAPI_URL}/fapi/v1/order`;
+export const BATCH_ORDERS = `${FAPI_URL}/fapi/v1/batchOrders`;
+export const ALL_OPEN_ORDERS = `${FAPI_URL}/fapi/v1/allOpenOrders`;
+export const COUNTDOWN_CANCEL_ALL = `${FAPI_URL}/fapi/v1/countdownCancelAll`;
+export const OPEN_ORDERS = `${FAPI_URL}/fapi/v1/openOrders`;
+export const OPEN_ORDER = `${FAPI_URL}/fapi/v1/openOrder`;
+export const ALL_ORDERS = `${FAPI_URL}/fapi/v1/allOrders`;
+export const FORCE_ORDERS = `${FAPI_URL}/fapi/v1/forceOrders`;
+
+// *****************************
+// ********* T R A D E *********
+// *****************************
+
+export const MARGIN_TYPE = `${FAPI_URL}/fapi/v1/marginType`;
+export const LEVERAGE = `${FAPI_URL}/fapi/v1/leverage`;
+export const POSITION_MARGIN = `${FAPI_URL}/fapi/v1/positionMargin`;
+export const POSITION_SIDE = `${FAPI_URL}/fapi/v1/positionSide`;
+export const TRADING_STATUS = `${FAPI_URL}/fapi/v1/apiTradingStatus`;
