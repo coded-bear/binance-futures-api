@@ -33,103 +33,91 @@ export class BinanceFAPI {
   // *****************************
 
   public async testConnectivity() {
-    return await request({ url: routes.GET_PING });
+    return await request({ url: routes.PING });
   }
 
   public async checkServerTime() {
-    return await request({ url: routes.GET_SERVER_TIME });
+    return await request({ url: routes.SERVER_TIME });
   }
 
   public async exchangeInfo(params: intf.SymbolSymbolsParams) {
-    return await request({ url: routes.GET_EXCHANGE_INFO, params });
+    return await request({ url: routes.EXCHANGE_INFO, params });
   }
 
   public async orderBook(params: intf.SymbolLimitParams) {
-    return await request({ url: routes.GET_ORDER_BOOK, params });
+    return await request({ url: routes.DEPTH, params });
   }
 
   public async recentTrades(params: intf.SymbolLimitParams) {
-    return await request({ url: routes.GET_RECENT_TRADES, params });
+    return await request({ url: routes.TRADES, params });
   }
 
   public async compressedTrades(params: intf.SymbolLimitTimeFromIdParams) {
-    return await request({ url: routes.GET_COMPRESSED_TRADES, params });
+    return await request({ url: routes.AGG_TRADES, params });
   }
 
   public async klines(params: intf.KlinesParams) {
-    return await request({ url: routes.GET_KLINES, params });
+    return await request({ url: routes.KLINES, params });
   }
 
   public async continuousKlines(params: intf.ContinuousKlinesParams) {
-    return await request({ url: routes.GET_CONTINUOUS_KLINES, params });
+    return await request({ url: routes.CONTINUOUS_KLINES, params });
   }
 
   public async markPriceKlines(params: intf.KlinesParams) {
-    return await request({ url: routes.GET_MARK_PRICE_KLINES, params });
+    return await request({ url: routes.MARK_PRICE_KLINES, params });
   }
 
   public async markPrice(params: intf.OptionalSymbolParams) {
-    return await request({ url: routes.GET_MARK_PRICE, params });
+    return await request({ url: routes.PREMIUM_INDEX, params });
   }
 
   public async fundingRateHistory(params: intf.SymbolLimitTimeParams) {
-    return await request({ url: routes.GET_FUNDING_RATE_HIST, params });
+    return await request({ url: routes.FUNDING_RATE, params });
   }
 
   public async get24hTickerPrice(params: intf.OptionalSymbolParams) {
-    return await request({ url: routes.GET_24H_TICKER_PRICE, params });
+    return await request({ url: routes.TICKER_24H, params });
   }
 
   public async symbolPriceTicker(params: intf.OptionalSymbolParams) {
-    return await request({ url: routes.GET_PRICE_TICKER, params });
+    return await request({ url: routes.TICKER_PRICE, params });
   }
 
   public async symbolOrderBookTicker(params: intf.OptionalSymbolParams) {
-    return await request({ url: routes.GET_ORDER_BOOK_TICKER, params });
+    return await request({ url: routes.TICKER_ORDER_BOOK, params });
   }
 
   public async openInterest(params: intf.OptionalSymbolParams) {
-    return await request({ url: routes.GET_OPEN_INTEREST, params });
+    return await request({ url: routes.OPEN_INTEREST, params });
   }
 
   public async openInterestStatistics(params: intf.SymbolLimitTimePeriodParams) {
-    return await request({ url: routes.GET_OPEN_INTEREST_HIST, params });
+    return await request({ url: routes.OPEN_INTEREST_HIST, params });
   }
 
   public async topLongShortAccountRatio(params: intf.SymbolLimitTimePeriodParams) {
-    return await request({
-      url: routes.GET_TOP_LONG_SHORT_ACC_RATIO,
-      params,
-    });
+    return await request({ url: routes.TOP_LONG_SHORT_ACCOUNT_RATIO, params });
   }
 
   public async topLongShortPositionRatio(params: intf.SymbolLimitTimePeriodParams) {
-    return await request({
-      url: routes.GET_TOP_LONG_SHORT_POS_RATIO,
-      params,
-    });
+    return await request({ url: routes.TOP_LONG_SHORT_POSITION_RATIO, params });
   }
 
   public async globalLongShortAccountRatio(params: intf.SymbolLimitTimePeriodParams) {
-    return await request({
-      url: routes.GET_GLOBAL_LONG_SHORT_ACC_RATIO,
-      params,
-    });
+    return await request({ url: routes.GLOBAL_LONG_SHORT_ACCOUNT_RATIO, params });
   }
 
   public async topTraderLongShortRatio(params: intf.SymbolLimitTimePeriodParams) {
-    return await request({
-      url: routes.GET_TAKER_LONG_SHORT_RATIO,
-      params,
-    });
+    return await request({ url: routes.TAKER_LONG_SHORT_RATIO, params });
   }
 
   public async compositeIndexSymbolInfo(params: intf.OptionalSymbolParams) {
-    return await request({ url: routes.GET_INDEX_INFO, params });
+    return await request({ url: routes.INDEX_INFO, params });
   }
 
   public async multiAssetsModeAssetIndex(params: intf.OptionalSymbolParams) {
-    return await request({ url: routes.GET_ASSET_INDEX, params });
+    return await request({ url: routes.ASSET_INDEX, params });
   }
 
   // *****************************
