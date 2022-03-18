@@ -208,7 +208,7 @@ export class BinanceFAPI {
     return await request({ method: 'post', url: routes.COUNTDOWN_CANCEL_ALL, params }, this.apikey);
   }
 
-  public async cancelMultipleOrders(data: intf.SymbolOrdersIdParams) {
+  public async cancelMultipleOrders(data: intf.SymbolOrdersIdListParams) {
     const params: Object = this._createSignatureParams(data);
     return await request({ method: 'delete', url: routes.BATCH_ORDERS, params }, this.apikey);
   }

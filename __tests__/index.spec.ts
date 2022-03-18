@@ -262,7 +262,159 @@ describe('BinanceFAPI', () => {
   // ********* O R D E R *********
   // *****************************
 
+  // test('NewOrder - 200', async () => {
+  //   const response = await binanceFAPI.newOrder({
+  //     symbol: 'BTCUSDT',
+  //     side: '',
+  //     positionSide: 'BOTH',
+  //     type: '',
+  //     timeInForce: '',
+  //     quantity: 1,
+  //     reduceOnly: '',
+  //     price: 100,
+  //     newClientOrderId: 1192355366,
+  //     stopPrice: 100,
+  //     closePosition: true,
+  //     activationPrice: '',
+  //     callbackRate: 1,
+  //     workingType: 'CONTRACT_PRICE',
+  //     newOrderRespType: 'ACK',
+  //   });
+  //   expect(response.status).toBe(200);
+  // });
+
+  // test('PlaceMultipleOrders - 200', async () => {
+  //   const response = await binanceFAPI.placeMultipleOrders({
+  //     batchOrders: '',
+  //   });
+  //   expect(response.status).toBe(200);
+  // });
+
+  test('QueryOrder - 200', async () => {
+    const response = await binanceFAPI.queryOrder({
+      symbol: 'BTCUSDT',
+      // orderId: 1192355366,
+      // origClientOrderId: 'IKDQAMirf7vElig8hTZHh0',
+    });
+    expect(response.status).toBe(200);
+  });
+
+  // test('CancelOrder - 200', async () => {
+  //   const response = await binanceFAPI.cancelOrder({
+  //     symbol: 'BTCUSDT',
+  //     // orderId: 1192355366,
+  //     // origClientOrderId: 'IKDQAMirf7vElig8hTZHh0',
+  //   });
+  //   expect(response.status).toBe(200);
+  // });
+
+  // test('CancelAllOpenOrders - 200', async () => {
+  //   const response = await binanceFAPI.cancelAllOpenOrders({
+  //     symbol: 'BTCUSDT',
+  //   });
+  //   expect(response.status).toBe(200);
+  // });
+
+  // test('AutoCancelAllOpenOrders - 200', async () => {
+  //   const response = await binanceFAPI.autoCancelAllOpenOrders({
+  //     symbol: 'BTCUSDT',
+  //     countdownTime: 1000,
+  //   });
+  //   expect(response.status).toBe(200);
+  // });
+
+  // test('CancelMultipleOrders - 200', async () => {
+  //   const response = await binanceFAPI.cancelMultipleOrders({
+  //     symbol: 'BTCUSDT',
+  //     orderIdList: [1221114054, 1229719329],
+  //     origClientOrderIdList: ['IKDQAMirf7vElig8hTZHh0', 'HwJSQKA7drF37tqqAN6q6q'],
+  //   });
+  //   expect(response.status).toBe(200);
+  // });
+
+  test('GetCurrentAllOpenOrders - 200', async () => {
+    const response = await binanceFAPI.getCurrentAllOpenOrders({
+      symbol: 'BTCUSDT',
+    });
+    expect(response.status).toBe(200);
+  });
+
+  test('QueryCurrentAllOpenOrders - 200', async () => {
+    const response = await binanceFAPI.queryCurrentAllOpenOrders({
+      symbol: 'BTCUSDT',
+      // orderId: 1221114054,
+      // origClientOrderId: 'IKDQAMirf7vElig8hTZHh0',
+    });
+    expect(response.status).toBe(200);
+  });
+
+  test('AllOrders - 200', async () => {
+    const response = await binanceFAPI.allOrders({});
+    expect(response.status).toBe(200);
+  });
+
+  test('GetForceOrders - 200', async () => {
+    const response = await binanceFAPI.getForceOrders({});
+    expect(response.status).toBe(200);
+  });
+
   // *****************************
   // ********* T R A D E *********
   // *****************************
+
+  // test('ChangeMarginType - 200', async () => {
+  //   const response = await binanceFAPI.changeMarginType({
+  //     symbol: 'BTCUSDT',
+  //     marginType: 'ISOLATED',
+  //   });
+  //   expect(response.status).toBe(200);
+  // });
+
+  // test('ChangeInitialLeverage - 200', async () => {
+  //   const response = await binanceFAPI.changeInitialLeverage({
+  //     symbol: 'BTCUSDT',
+  //     leverage: 20,
+  //   });
+  //   expect(response.status).toBe(200);
+  // });
+
+  // test('ModifyIsolatedPositionMargin - 200', async () => {
+  //   const response = await binanceFAPI.modifyIsolatedPositionMargin({
+  //     symbol: 'BTCUSDT',
+  //     positionSide: 'BOTH',
+  //     amount: 100,
+  //     type: 1,
+  //   });
+  //   expect(response.status).toBe(200);
+  // });
+
+  test('GetdPositionMarginChangeHistory - 200', async () => {
+    const response = await binanceFAPI.getdPositionMarginChangeHistory({
+      symbol: 'BTCUSDT',
+      type: 1,
+      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
+      endTime: new Date().getTime(),
+      limit: 10,
+    });
+    expect(response.status).toBe(200);
+  });
+
+  // test('ChangePositionMode - 200', async () => {
+  //   const response = await binanceFAPI.changePositionMode({
+  //     dualSidePosition: false,
+  //   });
+  //   expect(response.status).toBe(200);
+  // });
+
+  test('GetCurrentPositionMode - 200', async () => {
+    const response = await binanceFAPI.getCurrentPositionMode();
+    expect(response.status).toBe(200);
+  });
+
+  test('GetTradingStatus - 200', async () => {
+    const response = await binanceFAPI.getTradingStatus({
+      symbol: 'BTCUSDT',
+    });
+    expect(response.status).toBe(200);
+  });
 });

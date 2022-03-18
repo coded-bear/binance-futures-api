@@ -20,12 +20,12 @@ export interface SymbolCountdownTimeParams extends SymbolParams {
 
 export interface SymbolOptionalOrdersIdParams extends SymbolParams {
   orderId?: number;
-  origClientOrderId?: number;
+  origClientOrderId?: string;
 }
 
-export interface SymbolOrdersIdParams extends SymbolParams {
-  orderId?: number;
-  origClientOrderId: number;
+export interface SymbolOrdersIdListParams extends SymbolParams {
+  orderIdList?: number[];
+  origClientOrderIdList: string[];
 }
 
 export interface SymbolSymbolsParams extends OptionalSymbolParams {
