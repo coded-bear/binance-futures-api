@@ -349,12 +349,24 @@ describe('BinanceFAPI', () => {
   });
 
   test('AllOrders - 200', async () => {
-    const response = await binanceFAPI.allOrders({});
+    const response = await binanceFAPI.allOrders({
+      symbol: 'BTCUSDT',
+      // orderId: 1221114054,
+      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
+      endTime: new Date().getTime(),
+      limit: 10,
+    });
     expect(response.status).toBe(200);
   });
 
   test('GetForceOrders - 200', async () => {
-    const response = await binanceFAPI.getForceOrders({});
+    const response = await binanceFAPI.getForceOrders({
+      symbol: 'BTCUSDT',
+      // autoCloseType: '',
+      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
+      endTime: new Date().getTime(),
+      limit: 10,
+    });
     expect(response.status).toBe(200);
   });
 
