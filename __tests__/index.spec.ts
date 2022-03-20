@@ -339,8 +339,8 @@ describe('BinanceFAPI', () => {
     expect(response.status).toBe(200);
   });
 
-  test('QueryCurrentAllOpenOrders - 200', async () => {
-    const response = await binanceFAPI.queryCurrentAllOpenOrders({
+  test('QueryCurrentOpenOrder - 200', async () => {
+    const response = await binanceFAPI.queryCurrentOpenOrder({
       symbol: 'BTCUSDT',
       // orderId: 1221114054,
       // origClientOrderId: 'IKDQAMirf7vElig8hTZHh0',

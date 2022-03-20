@@ -218,7 +218,7 @@ export class BinanceFAPI {
     return await request({ url: routes.OPEN_ORDERS, params }, this.apikey);
   }
 
-  public async queryCurrentAllOpenOrders(data: intf.SymbolOptionalOrdersIdParams) {
+  public async queryCurrentOpenOrder(data: intf.SymbolOptionalOrdersIdParams) {
     const params: Object = this._createSignatureParams(data);
     return await request({ url: routes.OPEN_ORDER, params }, this.apikey);
   }
@@ -264,11 +264,11 @@ export class BinanceFAPI {
 
   public async getCurrentPositionMode() {
     const params: Object = this._createSignatureParams();
-    return await request({ method: 'post', url: routes.POSITION_SIDE, params }, this.apikey);
+    return await request({ url: routes.POSITION_SIDE, params }, this.apikey);
   }
 
   public async getTradingStatus(data?: intf.OptionalSymbolParams) {
     const params: Object = this._createSignatureParams(data);
-    return await request({ method: 'post', url: routes.TRADING_STATUS, params }, this.apikey);
+    return await request({ url: routes.TRADING_STATUS, params }, this.apikey);
   }
 }
