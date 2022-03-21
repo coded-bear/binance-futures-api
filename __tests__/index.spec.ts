@@ -429,4 +429,23 @@ describe('BinanceFAPI', () => {
     });
     expect(response.status).toBe(200);
   });
+
+  // *****************************
+  // *** D A T A * S T R E A M ***
+  // *****************************
+
+  test('CreateNewListenKey - 200', async () => {
+    const response = await binanceFAPI.createNewListenKey();
+    expect(response.status).toBe(200);
+  });
+
+  test('RenewNewListenKey - 200', async () => {
+    const response = await binanceFAPI.renewNewListenKey();
+    expect(response.status).toBe(200);
+  });
+
+  test('DeleteNewListenKey - 200', async () => {
+    const response = await binanceFAPI.deleteNewListenKey();
+    expect(response.status).toBe(200);
+  });
 });

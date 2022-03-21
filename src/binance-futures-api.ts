@@ -271,4 +271,16 @@ export class BinanceFAPI {
     const params: Object = this._createSignatureParams(data);
     return await request({ url: routes.TRADING_STATUS, params }, this.apikey);
   }
+
+  public async createNewListenKey() {
+    return await request({ method: 'post', url: routes.LISTEN_KEY }, this.apikey);
+  }
+
+  public async renewNewListenKey() {
+    return await request({ method: 'put', url: routes.LISTEN_KEY }, this.apikey);
+  }
+
+  public async deleteNewListenKey() {
+    return await request({ method: 'delete', url: routes.LISTEN_KEY }, this.apikey);
+  }
 }
