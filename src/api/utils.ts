@@ -7,7 +7,7 @@ export const request = async (
   apikey?: string,
 ): Promise<AxiosResponse> => {
   config.method = config.method || 'get';
-  if (!!apikey) {
+  if (apikey) {
     config.headers = {
       'Content-Type': 'application/json',
       'X-MBX-APIKEY': apikey || '',
