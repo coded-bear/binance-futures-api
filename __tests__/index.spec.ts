@@ -381,15 +381,15 @@ describe('BinanceFAPI', () => {
     expect(response.status).toBe(200);
   });
 
-  test('ModifyIsolatedPositionMargin - 200', async () => {
-    const response = await binanceFAPI.modifyIsolatedPositionMargin({
-      symbol: 'BTCUSDT',
-      positionSide: 'BOTH',
-      amount: 100,
-      type: 1,
-    });
-    expect(response.status).toBe(200);
-  });
+  // test('ModifyIsolatedPositionMargin - 200', async () => {
+  //   const response = await binanceFAPI.modifyIsolatedPositionMargin({
+  //     symbol: 'BTCUSDT',
+  //     positionSide: 'BOTH',
+  //     amount: 100,
+  //     type: 1,
+  //   });
+  //   expect(response.status).toBe(200);
+  // });
 
   test('GetdPositionMarginChangeHistory - 200', async () => {
     const response = await binanceFAPI.getdPositionMarginChangeHistory({
