@@ -272,6 +272,10 @@ export class BinanceFAPI {
     return await request({ url: routes.TRADING_STATUS, params }, this.apikey);
   }
 
+  // *****************************
+  // *** D A T A * S T R E A M ***
+  // *****************************
+
   public async createNewListenKey() {
     return await request({ method: 'post', url: routes.LISTEN_KEY }, this.apikey);
   }
