@@ -23,7 +23,7 @@
     "Binance futures API"
   ],
   "author": "Łukasz Warchoł",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/coded-bear/binance-futures-api/issues"
   },
