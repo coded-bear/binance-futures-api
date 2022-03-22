@@ -18,17 +18,18 @@ import { BinanceFAPI } from 'binance-futures-api';
 const binanceFAPI = new BinanceFAPI(API_KEY, API_SECRET);
 ```
 
-Tip: For "Market" methods you don't need API_KEY and API_SECRET
+<b>Tip:</b>
+For "Market" methods you don't need API_KEY and API_SECRET
 
 ## API
 
-### Test connectivity
+#### Test connectivity
 
 ```ts
 await binanceFAPI.testConnectivity();
 ```
 
-### Check server time
+#### Check server time
 
 ```ts
 await binanceFAPI.checkServerTime();
