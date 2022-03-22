@@ -293,8 +293,6 @@ describe('BinanceFAPI', () => {
   test('QueryOrder - 200', async () => {
     const response = await binanceFAPI.queryOrder({
       symbol: 'BTCUSDT',
-      // orderId: 1192355366,
-      // origClientOrderId: 'IKDQAMirf7vElig8hTZHh0',
     });
     expect(response.status).toBe(200);
   });
@@ -302,8 +300,6 @@ describe('BinanceFAPI', () => {
   // test('CancelOrder - 200', async () => {
   //   const response = await binanceFAPI.cancelOrder({
   //     symbol: 'BTCUSDT',
-  //     // orderId: 1192355366,
-  //     // origClientOrderId: 'IKDQAMirf7vElig8hTZHh0',
   //   });
   //   expect(response.status).toBe(200);
   // });
@@ -326,8 +322,6 @@ describe('BinanceFAPI', () => {
   // test('CancelMultipleOrders - 200', async () => {
   //   const response = await binanceFAPI.cancelMultipleOrders({
   //     symbol: 'BTCUSDT',
-  //     orderIdList: [1221114054, 1229719329],
-  //     origClientOrderIdList: ['IKDQAMirf7vElig8hTZHh0', 'HwJSQKA7drF37tqqAN6q6q'],
   //   });
   //   expect(response.status).toBe(200);
   // });
@@ -342,8 +336,6 @@ describe('BinanceFAPI', () => {
   test('QueryCurrentOpenOrder - 200', async () => {
     const response = await binanceFAPI.queryCurrentOpenOrder({
       symbol: 'BTCUSDT',
-      // orderId: 1221114054,
-      // origClientOrderId: 'IKDQAMirf7vElig8hTZHh0',
     });
     expect(response.status).toBe(200);
   });
@@ -351,7 +343,6 @@ describe('BinanceFAPI', () => {
   test('AllOrders - 200', async () => {
     const response = await binanceFAPI.allOrders({
       symbol: 'BTCUSDT',
-      // orderId: 1221114054,
       startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
       endTime: new Date().getTime(),
       limit: 10,
@@ -362,7 +353,7 @@ describe('BinanceFAPI', () => {
   test('GetForceOrders - 200', async () => {
     const response = await binanceFAPI.getForceOrders({
       symbol: 'BTCUSDT',
-      // autoCloseType: '',
+      autoCloseType: 'LIQUIDATION',
       startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
       endTime: new Date().getTime(),
       limit: 10,
@@ -374,31 +365,31 @@ describe('BinanceFAPI', () => {
   // ********* T R A D E *********
   // *****************************
 
-  // test('ChangeMarginType - 200', async () => {
-  //   const response = await binanceFAPI.changeMarginType({
-  //     symbol: 'BTCUSDT',
-  //     marginType: 'ISOLATED',
-  //   });
-  //   expect(response.status).toBe(200);
-  // });
+  test('ChangeMarginType - 200', async () => {
+    const response = await binanceFAPI.changeMarginType({
+      symbol: 'BTCUSDT',
+      marginType: 'ISOLATED',
+    });
+    expect(response.status).toBe(200);
+  });
 
-  // test('ChangeInitialLeverage - 200', async () => {
-  //   const response = await binanceFAPI.changeInitialLeverage({
-  //     symbol: 'BTCUSDT',
-  //     leverage: 20,
-  //   });
-  //   expect(response.status).toBe(200);
-  // });
+  test('ChangeInitialLeverage - 200', async () => {
+    const response = await binanceFAPI.changeInitialLeverage({
+      symbol: 'BTCUSDT',
+      leverage: 20,
+    });
+    expect(response.status).toBe(200);
+  });
 
-  // test('ModifyIsolatedPositionMargin - 200', async () => {
-  //   const response = await binanceFAPI.modifyIsolatedPositionMargin({
-  //     symbol: 'BTCUSDT',
-  //     positionSide: 'BOTH',
-  //     amount: 100,
-  //     type: 1,
-  //   });
-  //   expect(response.status).toBe(200);
-  // });
+  test('ModifyIsolatedPositionMargin - 200', async () => {
+    const response = await binanceFAPI.modifyIsolatedPositionMargin({
+      symbol: 'BTCUSDT',
+      positionSide: 'BOTH',
+      amount: 100,
+      type: 1,
+    });
+    expect(response.status).toBe(200);
+  });
 
   test('GetdPositionMarginChangeHistory - 200', async () => {
     const response = await binanceFAPI.getdPositionMarginChangeHistory({
@@ -411,12 +402,12 @@ describe('BinanceFAPI', () => {
     expect(response.status).toBe(200);
   });
 
-  // test('ChangePositionMode - 200', async () => {
-  //   const response = await binanceFAPI.changePositionMode({
-  //     dualSidePosition: false,
-  //   });
-  //   expect(response.status).toBe(200);
-  // });
+  test('ChangePositionMode - 200', async () => {
+    const response = await binanceFAPI.changePositionMode({
+      dualSidePosition: false,
+    });
+    expect(response.status).toBe(200);
+  });
 
   test('GetCurrentPositionMode - 200', async () => {
     const response = await binanceFAPI.getCurrentPositionMode();

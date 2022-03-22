@@ -106,13 +106,13 @@ export interface ForceOrdersParams extends OptionalSymbolLimitTimeParams {
 }
 
 export interface NewOrderParams extends SymbolParams {
-  side: any;
+  side: string;
   positionSide?: string;
-  type: any;
-  timeInForce?: any;
+  type: string;
+  timeInForce?: string;
   quantity: number;
   reduceOnly?: any;
-  price: number;
+  price?: number;
   newClientOrderId?: number;
   stopPrice?: number;
   closePosition?: boolean;
