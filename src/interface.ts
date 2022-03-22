@@ -11,7 +11,7 @@ export interface MultiAssetsMarginParams {
 }
 
 export interface BatchOrdersParams {
-  batchOrders: any;
+  batchOrders: any[];
 }
 
 export interface SymbolCountdownTimeParams extends SymbolParams {
