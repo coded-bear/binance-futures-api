@@ -252,7 +252,7 @@ export class BinanceFAPI {
     return request({ method: 'post', url: routes.POSITION_MARGIN, params }, this.apikey);
   }
 
-  public async getdPositionMarginChangeHistory(data: intf.SymbolLimitTimeTypeParams) {
+  public async getPositionMarginChangeHistory(data: intf.SymbolLimitTimeTypeParams) {
     const params = this._createSignatureParams(data);
     return request({ url: routes.POSITION_MARGIN_HIST, params }, this.apikey);
   }
