@@ -276,15 +276,15 @@ export class BinanceFAPI {
   // *** D A T A * S T R E A M ***
   // *****************************
 
-  public async createNewListenKey() {
+  public async createListenKey() {
     return request({ method: 'post', url: routes.LISTEN_KEY }, this.apikey);
   }
 
-  public async renewNewListenKey() {
+  public async renewListenKey() {
     return request({ method: 'put', url: routes.LISTEN_KEY }, this.apikey);
   }
 
-  public async deleteNewListenKey() {
+  public async deleteListenKey() {
     return request({ method: 'delete', url: routes.LISTEN_KEY }, this.apikey);
   }
 }

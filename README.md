@@ -407,24 +407,24 @@ await binanceFAPI.getCurrentPositionMode();
 await binanceFAPI.getTradingStatus({ symbol: 'BTCUSDT' });
 ```
 
-### Data stream
+### Data Stream
 
-#### Create new listen key
+#### Create Listen Key
 
 ```ts
-await binanceFAPI.createNewListenKey();
+await binanceFAPI.createListenKey();
 ```
 
-#### Renew new listen key
+#### Renew Listen Key
 
 ```ts
-await binanceFAPI.renewNewListenKey();
+await binanceFAPI.renewListenKey();
 ```
 
-#### Delete new listen key
+#### Delete Listen Key
 
 ```ts
-await binanceFAPI.deleteNewListenKey();
+await binanceFAPI.deleteListenKey();
 ```
 
 Full data for methods according to Binance API
