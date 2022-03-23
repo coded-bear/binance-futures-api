@@ -24,19 +24,19 @@ Tip: For "Market" methods you don't need API_KEY and API_SECRET
 
 ### Market
 
-#### Test connectivity
+#### Test Connectivity
 
 ```ts
 await binanceFAPI.testConnectivity();
 ```
 
-#### Check server time
+#### Check Server Time
 
 ```ts
 await binanceFAPI.checkServerTime();
 ```
 
-#### Exchange info
+#### Exchange Information
 
 ```ts
 await binanceFAPI.exchangeInfo({ symbols: JSON.stringify(['BTCUSDT', 'ETHUSDT']) });
@@ -48,7 +48,7 @@ await binanceFAPI.exchangeInfo({ symbols: JSON.stringify(['BTCUSDT', 'ETHUSDT'])
 await binanceFAPI.orderBook({ symbol: 'BTCUSDT' });
 ```
 
-#### Recent trades
+#### Recent Trades List
 
 ```ts
 await binanceFAPI.recentTrades({
@@ -57,7 +57,7 @@ await binanceFAPI.recentTrades({
 });
 ```
 
-#### Compressed trades
+#### Compressed/Aggregate Trades List
 
 ```ts
 await binanceFAPI.compressedTrades({
@@ -68,7 +68,7 @@ await binanceFAPI.compressedTrades({
 });
 ```
 
-#### Klines
+#### Kline/Candlestick Data
 
 ```ts
 await binanceFAPI.klines({
@@ -80,7 +80,7 @@ await binanceFAPI.klines({
 });
 ```
 
-#### Continuous klines
+#### Continuous Contract Kline/Candlestick Data
 
 ```ts
 await binanceFAPI.continuousKlines({
@@ -93,7 +93,7 @@ await binanceFAPI.continuousKlines({
 });
 ```
 
-#### Mark price klines
+#### Mark Price Kline/Candlestick Data
 
 ```ts
 await binanceFAPI.markPriceKlines({
@@ -105,13 +105,13 @@ await binanceFAPI.markPriceKlines({
 });
 ```
 
-#### Mark price
+#### Mark Price
 
 ```ts
 await binanceFAPI.markPrice({ symbol: 'BTCUSDT' });
 ```
 
-#### Funding rate history
+#### Get Funding Rate History
 
 ```ts
 await binanceFAPI.fundingRateHistory({
@@ -122,31 +122,31 @@ await binanceFAPI.fundingRateHistory({
 });
 ```
 
-#### Get 24h ticker price
+#### 24hr Ticker Price Change Statistics
 
 ```ts
 await binanceFAPI.get24hTickerPrice({ symbol: 'BTCUSDT' });
 ```
 
-#### Symbol price ticker
+#### Symbol Price Ticker
 
 ```ts
 await binanceFAPI.symbolPriceTicker({ symbol: 'BTCUSDT' });
 ```
 
-#### Symbol order book ticker
+#### Symbol Order Book Ticker
 
 ```ts
 await binanceFAPI.symbolOrderBookTicker({ symbol: 'BTCUSDT' });
 ```
 
-#### Open interest
+#### Open Interest
 
 ```ts
 await binanceFAPI.openInterest({ symbol: 'BTCUSDT' });
 ```
 
-#### Open interest statistics
+#### Open Interest Statistics
 
 ```ts
 await binanceFAPI.openInterestStatistics({
@@ -156,7 +156,7 @@ await binanceFAPI.openInterestStatistics({
 });
 ```
 
-#### Top long short account ratio
+#### Top Trader Long/Short Ratio (Accounts)
 
 ```ts
 await binanceFAPI.topLongShortAccountRatio({
@@ -166,7 +166,7 @@ await binanceFAPI.topLongShortAccountRatio({
 });
 ```
 
-#### Top long short position ratio
+#### Top Trader Long/Short Ratio (Positions)
 
 ```ts
 await binanceFAPI.topLongShortPositionRatio({
@@ -176,7 +176,7 @@ await binanceFAPI.topLongShortPositionRatio({
 });
 ```
 
-#### Global long short account ratio
+#### Long/Short Ratio
 
 ```ts
 await binanceFAPI.globalLongShortAccountRatio({
@@ -186,7 +186,7 @@ await binanceFAPI.globalLongShortAccountRatio({
 });
 ```
 
-#### Top trader long short ratio
+#### Taker Buy/Sell Volume
 
 ```ts
 await binanceFAPI.topTraderLongShortRatio({
@@ -196,13 +196,13 @@ await binanceFAPI.topTraderLongShortRatio({
 });
 ```
 
-#### Composite index symbol info
+#### Composite Index Symbol Information
 
 ```ts
 await binanceFAPI.compositeIndexSymbolInfo({ symbol: 'DEFIUSDT' });
 ```
 
-#### Multi-Assets mode asset index
+#### Multi-Assets Mode Asset Index
 
 ```ts
 await binanceFAPI.multiAssetsModeAssetIndex({ symbol: 'BTCUSD' });
@@ -210,61 +210,61 @@ await binanceFAPI.multiAssetsModeAssetIndex({ symbol: 'BTCUSD' });
 
 ### Account
 
-#### Account info
+#### Account Information
 
 ```ts
 await binanceFAPI.accountInfo();
 ```
 
-#### Get income history
+#### Get Income History
 
 ```ts
 await binanceFAPI.getIncomeHistory();
 ```
 
-#### Position info
+#### Position Information
 
 ```ts
 await binanceFAPI.positionInfo();
 ```
 
-#### Account trade list
+#### Account Trade List
 
 ```ts
 await binanceFAPI.accountTradeList();
 ```
 
-#### Account balance
+#### Future Account Balance
 
 ```ts
 await binanceFAPI.accountBalance();
 ```
 
-#### Leverage brackets
+#### Notional and Leverage Brackets (USER_DATA)
 
 ```ts
 await binanceFAPI.leverageBrackets();
 ```
 
-#### Position ADL quantile
+#### Position ADL Quantile Estimation (USER_DATA)
 
 ```ts
 await binanceFAPI.positionADLQuantile();
 ```
 
-#### User commission rate
+#### User Commission Rate (USER_DATA)
 
 ```ts
 await binanceFAPI.userCommissionRate({ symbol: 'BTCUSDT' });
 ```
 
-#### Get current Multi-Assets mode
+#### Get Current Multi-Assets Mode
 
 ```ts
 await binanceFAPI.getCurrentMultiAssetsMode();
 ```
 
-#### Change Multi-Assets mode
+#### Change Multi-Assets Mode
 
 ```ts
 await binanceFAPI.changeMultiAssetsMode({ multiAssetsMargin: false });
@@ -272,7 +272,7 @@ await binanceFAPI.changeMultiAssetsMode({ multiAssetsMargin: false });
 
 ### Order
 
-#### New order
+#### New Order (TRADE)
 
 ```ts
 await binanceFAPI.newOrder({
@@ -284,55 +284,55 @@ await binanceFAPI.newOrder({
 });
 ```
 
-#### Place multiple orders
+#### Place Multiple Orders (TRADE)
 
 ```ts
 await binanceFAPI.placeMultipleOrders({ batchOrders: [] });
 ```
 
-#### Query order
+#### Query Order
 
 ```ts
 await binanceFAPI.queryOrder({ symbol: 'BTCUSDT' });
 ```
 
-#### Cancel order
+#### Cancel Order
 
 ```ts
 await binanceFAPI.cancelOrder({ symbol: 'BTCUSDT' });
 ```
 
-#### Cancel all open orders
+#### Cancel All Open Orders
 
 ```ts
 await binanceFAPI.cancelAllOpenOrders({ symbol: 'BTCUSDT' });
 ```
 
-#### Auto cancel all open orders
+#### Auto-Cancel All Open Orders (TRADE)
 
 ```ts
 await binanceFAPI.autoCancelAllOpenOrders({ symbol: 'BTCUSDT' });
 ```
 
-#### Cancel multiple orders
+#### Cancel Multiple Orders (TRADE)
 
 ```ts
 await binanceFAPI.cancelMultipleOrders({ symbol: 'BTCUSDT' });
 ```
 
-#### Get current all open orders
+#### Current All Open Orders (USER_DATA)
 
 ```ts
 await binanceFAPI.getCurrentAllOpenOrders({ symbol: 'BTCUSDT' });
 ```
 
-#### Query current open order
+#### Query Current Open Order (USER_DATA)
 
 ```ts
 await binanceFAPI.queryCurrentOpenOrder({ symbol: 'BTCUSDT' });
 ```
 
-#### All orders
+#### All Orders
 
 ```ts
 await binanceFAPI.allOrders({
@@ -341,7 +341,7 @@ await binanceFAPI.allOrders({
 });
 ```
 
-#### Get force orders
+#### User's Force Orders (USER_DATA)
 
 ```ts
 await binanceFAPI.getForceOrders({
@@ -352,7 +352,7 @@ await binanceFAPI.getForceOrders({
 
 ### Trade
 
-#### Change margin type
+#### Change Margin Type
 
 ```ts
 await binanceFAPI.changeMarginType({
@@ -361,7 +361,7 @@ await binanceFAPI.changeMarginType({
 });
 ```
 
-#### Change initial leverage
+#### Change Initial Leverage
 
 ```ts
 await binanceFAPI.changeInitialLeverage({
@@ -370,7 +370,7 @@ await binanceFAPI.changeInitialLeverage({
 });
 ```
 
-#### Modify isolated position margin
+#### Modify Isolated Position Margin
 
 ```ts
 await binanceFAPI.modifyIsolatedPositionMargin({
@@ -380,7 +380,7 @@ await binanceFAPI.modifyIsolatedPositionMargin({
 });
 ```
 
-#### Get position margin change history
+#### Get Position Margin Change History
 
 ```ts
 await binanceFAPI.getPositionMarginChangeHistory({
@@ -389,19 +389,19 @@ await binanceFAPI.getPositionMarginChangeHistory({
 });
 ```
 
-#### Change position mode
+#### Change Position Mode (TRADE)
 
 ```ts
 await binanceFAPI.changePositionMode({ dualSidePosition: false });
 ```
 
-#### Get current position mode
+#### Get Current Position Mode (USER_DATA)
 
 ```ts
 await binanceFAPI.getCurrentPositionMode();
 ```
 
-#### Get trading status
+#### User API Trading Quantitative Rules Indicators (USER_DATA)
 
 ```ts
 await binanceFAPI.getTradingStatus({ symbol: 'BTCUSDT' });
