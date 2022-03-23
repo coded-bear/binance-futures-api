@@ -391,7 +391,7 @@ describe('BinanceFAPI', () => {
   //   expect(response.status).toBe(200);
   // });
 
-  test('getPositionMarginChangeHistory - 200', async () => {
+  test('GetPositionMarginChangeHistory - 200', async () => {
     const response = await binanceFAPI.getPositionMarginChangeHistory({
       symbol: 'BTCUSDT',
       type: 1,
