@@ -1,14 +1,14 @@
 {
   "name": "binance-futures-api",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Futures API for Binance market",
-  "main": "./dist/src/index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "clean": "rimraf coverage dist tmp",
     "prebuild": "npm run lint",
     "build": "tsc -p tsconfig.release.json",
     "build:watch": "tsc -w -p tsconfig.release.json",
-    "start": "node dist/src/index.js",
+    "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn src/index.ts",
     "lint": "eslint . --ext .ts",
     "test": "dotenv -e .env.test jest --coverage",
