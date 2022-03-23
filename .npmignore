@@ -7,4 +7,3 @@
 jest.config.js
 tsconfig.json
 tsconfig.release.json
-.env*
