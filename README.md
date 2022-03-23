@@ -278,7 +278,6 @@ await binanceFAPI.changeMultiAssetsMode({ multiAssetsMargin: false });
 await binanceFAPI.newOrder({
   symbol: 'BTCUSDT',
   side: 'BUY',
-  positionSide: 'BOTH',
   type: 'MARKET',
   quantity: 1,
 });

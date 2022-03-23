@@ -43,8 +43,6 @@ describe('BinanceFAPI', () => {
   test('CompressedTrades - 200', async () => {
     const response = await binanceFAPI.compressedTrades({
       symbol: 'BTCUSDT',
-      startTime: new Date().getTime(),
-      endTime: new Date().getTime(),
       limit: 10,
     });
     expect(response.status).toBe(200);
@@ -54,8 +52,6 @@ describe('BinanceFAPI', () => {
     const response = await binanceFAPI.klines({
       symbol: 'BTCUSDT',
       interval: '15m',
-      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
-      endTime: new Date().getTime(),
       limit: 10,
     });
     expect(response.status).toBe(200);
@@ -66,8 +62,6 @@ describe('BinanceFAPI', () => {
       pair: 'BTCUSDT',
       contractType: 'PERPETUAL',
       interval: '15m',
-      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
-      endTime: new Date().getTime(),
       limit: 10,
     });
     expect(response.status).toBe(200);
@@ -77,8 +71,6 @@ describe('BinanceFAPI', () => {
     const response = await binanceFAPI.markPriceKlines({
       symbol: 'BTCUSDT',
       interval: '15m',
-      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
-      endTime: new Date().getTime(),
       limit: 10,
     });
     expect(response.status).toBe(200);
@@ -94,8 +86,6 @@ describe('BinanceFAPI', () => {
   test('FundingRateHistory - 200', async () => {
     const response = await binanceFAPI.fundingRateHistory({
       symbol: 'BTCUSDT',
-      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
-      endTime: new Date().getTime(),
       limit: 10,
     });
     expect(response.status).toBe(200);
@@ -133,8 +123,6 @@ describe('BinanceFAPI', () => {
     const response = await binanceFAPI.openInterestStatistics({
       symbol: 'BTCUSDT',
       period: '1h',
-      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
-      endTime: new Date().getTime(),
       limit: 10,
     });
     expect(response.status).toBe(200);
@@ -144,8 +132,6 @@ describe('BinanceFAPI', () => {
     const response = await binanceFAPI.topLongShortAccountRatio({
       symbol: 'BTCUSDT',
       period: '1h',
-      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
-      endTime: new Date().getTime(),
       limit: 10,
     });
     expect(response.status).toBe(200);
@@ -155,8 +141,6 @@ describe('BinanceFAPI', () => {
     const response = await binanceFAPI.topLongShortPositionRatio({
       symbol: 'BTCUSDT',
       period: '1h',
-      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
-      endTime: new Date().getTime(),
       limit: 10,
     });
     expect(response.status).toBe(200);
@@ -166,8 +150,6 @@ describe('BinanceFAPI', () => {
     const response = await binanceFAPI.globalLongShortAccountRatio({
       symbol: 'BTCUSDT',
       period: '1h',
-      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
-      endTime: new Date().getTime(),
       limit: 10,
     });
     expect(response.status).toBe(200);
@@ -177,8 +159,6 @@ describe('BinanceFAPI', () => {
     const response = await binanceFAPI.topTraderLongShortRatio({
       symbol: 'BTCUSDT',
       period: '1h',
-      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
-      endTime: new Date().getTime(),
       limit: 10,
     });
     expect(response.status).toBe(200);
@@ -265,20 +245,9 @@ describe('BinanceFAPI', () => {
   // test('NewOrder - 200', async () => {
   //   const response = await binanceFAPI.newOrder({
   //     symbol: 'BTCUSDT',
-  //     side: '',
-  //     positionSide: 'BOTH',
-  //     type: '',
-  //     timeInForce: '',
+  //     side: 'BUY',
+  //     type: 'MARKET',
   //     quantity: 1,
-  //     reduceOnly: '',
-  //     price: 100,
-  //     newClientOrderId: 1192355366,
-  //     stopPrice: 100,
-  //     closePosition: true,
-  //     activationPrice: '',
-  //     callbackRate: 1,
-  //     workingType: 'CONTRACT_PRICE',
-  //     newOrderRespType: 'ACK',
   //   });
   //   expect(response.status).toBe(200);
   // });
@@ -343,8 +312,6 @@ describe('BinanceFAPI', () => {
   test('AllOrders - 200', async () => {
     const response = await binanceFAPI.allOrders({
       symbol: 'BTCUSDT',
-      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
-      endTime: new Date().getTime(),
       limit: 10,
     });
     expect(response.status).toBe(200);
@@ -354,8 +321,6 @@ describe('BinanceFAPI', () => {
     const response = await binanceFAPI.getForceOrders({
       symbol: 'BTCUSDT',
       autoCloseType: 'LIQUIDATION',
-      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
-      endTime: new Date().getTime(),
       limit: 10,
     });
     expect(response.status).toBe(200);
@@ -395,8 +360,6 @@ describe('BinanceFAPI', () => {
     const response = await binanceFAPI.getPositionMarginChangeHistory({
       symbol: 'BTCUSDT',
       type: 1,
-      startTime: new Date().getTime() - 24 * 60 * 60 * 1000,
-      endTime: new Date().getTime(),
       limit: 10,
     });
     expect(response.status).toBe(200);
