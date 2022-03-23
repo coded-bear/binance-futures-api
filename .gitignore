@@ -1,0 +1,25 @@
+# Dependency directories
+node_modules
+
+# Build
+dist
+
+# config files
+src/config/config.ts
+
+# env files
+.env*
+
+# Docs
+docs
+
+# coverage
+coverage
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Mac files
+.DS_Store
