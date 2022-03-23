@@ -13,7 +13,8 @@
     "lint": "eslint . --ext .ts",
     "test": "dotenv -e .env.test jest --coverage",
     "test:watch": "jest --watch",
-    "format": "prettier --write \"**/*.{js,ts}\""
+    "format": "prettier --write \"**/*.{js,ts}\"",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
